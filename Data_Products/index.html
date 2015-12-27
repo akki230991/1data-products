@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Products</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Data Products">
+  <meta name="author" content="Ankit Gupta">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Data Products</h1>
+    <h2>To model the effect of horsepower, number of cylinders, and weight on the mpg</h2>
+    <p>Ankit Gupta<br/>Student</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Application of linear model to the mtcars dataset, modeling the effect of horsepower, number of cylinders, and weight on the mpg.  Since the only valid possibilities for number of cylinders in the dataset were 4, 6, and 8, the choice have been limited using radio buttons.  For the weight, reactive() is used to convert the user input weight into the units used by the model, lb/1000.  Finally, a pre-set function using the linear model is used to predict the mpg based on the three variables input by the user.</p>
+
+<p>Part1: Shiny Application</p>
+
+<ul>
+<li>URL: <a href="https://swhgoon.shinyapps.io/part1_devdataprod-shiny/">https://swhgoon.shinyapps.io/part1_devdataprod-shiny/</a> </li>
+<li>A shiny-App shows the relationship between effect of horsepower, number of cylinders, and weight on the miles per gallon (MPG). </li>
+</ul>
+
+<p>Part2: Slidify Application</p>
+
+<ul>
+<li>URL: </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>mtcars dataset - Description</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Motor Trend Car Road Tests</h3>
+
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models).</p>
+
+<h3>Source</h3>
+
+<p>Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391-411.</p>
+
+<pre><code class="r">library(datasets)
+head(mtcars, 3)
+</code></pre>
+
+<pre><code>##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Features of the Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The application is used for understanding the relationship between effect of horsepower, number of cylinders, and weight on the miles per gallon (MPG).</li>
+<li>The relationship can be visualised using a Scatter plot as well as a regression model</li>
+<li>There is a selector using which the user can select the variable that needs to be used for the comparison</li>
+<li>Also the user has the flexibility to change the Horsepower, number of cylinder and weight on real time basis in the analysis</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Sample Plots</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(datasets); data(mtcars); par(mfrow = c(2, 3))
+with(mtcars, plot(hp, mpg, xlab=&#39;Gross horsepower&#39;, ylab=&#39;MPG&#39;, main=&#39;MPG vs horsepower&#39;))
+with(mtcars, plot(cyl, mpg, xlab=&#39;Number of cylinders&#39;, ylab=&#39;MPG&#39;, main=&#39;MPG vs cylinder&#39;))
+with(mtcars, plot(wt, mpg, xlab=&#39;Weight (lb/1000)&#39;, ylab=&#39;MPG&#39;, main=&#39;MPG vs weight&#39;))
+</code></pre>
+
+<p><img src="assets/fig/sample_plot-1.png" alt="plot of chunk sample_plot"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Summary'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='mtcars dataset - Description'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Features of the Application'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Sample Plots'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
