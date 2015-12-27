@@ -1,7 +1,7 @@
 name: Publish Document
 account: rpubs
 server: rpubs.com
-appId: https://api.rpubs.com/api/v1/document/138164/0d5d7da6355044d9b0f41a0eabffcb33
-bundleId: https://api.rpubs.com/api/v1/document/138164/0d5d7da6355044d9b0f41a0eabffcb33
-url: http://rpubs.com/akki230991/138164
-when: 1451245985.76791
+appId: https://api.rpubs.com/api/v1/document/138261/48f7a1ec9e824180a6eb922fadc8e1b2
+bundleId: https://api.rpubs.com/api/v1/document/138261/48f7a1ec9e824180a6eb922fadc8e1b2
+url: http://rpubs.com/publish/claim/138261/b5e9a777d63840c1a00bb5016a7833a2
+when: 1451248171.86113
